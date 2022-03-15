@@ -28,7 +28,7 @@ RUN apt-get install -y libc6-dev
 
 RUN ["chmod", "+x", "/home/dfx-install.sh"]
 
-RUN ["sh", "-m", "/home/dfx-install.sh"]
+RUN ["sh", "+m", "/home/dfx-install.sh"]
 
 RUN ["chmod", "+x", "/home/node/entrypoint.sh"]
 
