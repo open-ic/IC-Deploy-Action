@@ -26,9 +26,11 @@ RUN apt-get install -y libc6-dev
 
 # RUN add-apt-repository -r ppa:webkit-team/ppa && apt-get install -y libwebkit2gtk-4.0-37 libwebkit2gtk-4.0-dev
 
-RUN ["chmod", "+x", "/home/dfx-install.sh"]
+# RUN ["chmod", "+x", "/home/dfx-install.sh"]
+# RUN ["sh", "-m", "/home/dfx-install.sh"]
 
-RUN ["sh", "+m", "/home/dfx-install.sh"]
+RUN chmod +x /home/dfx-install.sh
+RUN /home/dfx-install.sh
 
 RUN ["chmod", "+x", "/home/node/entrypoint.sh"]
 
