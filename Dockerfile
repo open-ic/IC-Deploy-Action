@@ -1,6 +1,8 @@
 # FROM node:16-alpine3.11
 FROM ubuntu:jammy
 
+ARG DEBIAN_FRONTEND=noninteractive
+
 ENV NPM_CONFIG_PREFIX=/home/node/.npm-global
 ENV PATH="/home/node/.npm-global/bin:$PATH"
 
@@ -13,6 +15,8 @@ USER root
 
 # RUN apk add --update curl
 RUN apt-get update
+
+RUN apt-get install -y apt-utils
 
 RUN apt-get install -y curl
 
